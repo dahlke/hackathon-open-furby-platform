@@ -3,7 +3,7 @@ from flask.ext import restful
 from flask.ext.restful import reqparse
 import redis
 
-r = redis.StrictRedis(host='192.168.2.133', port=6379, db=0)
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
 pubsub = r.pubsub()
 pubsub.subscribe('changes')
 # listen for carl's changes, if there is a dict, refresh the page

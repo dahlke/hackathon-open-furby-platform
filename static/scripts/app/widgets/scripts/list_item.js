@@ -28,7 +28,8 @@ define(function(require) {
             var selected = this._ofp_state.get('script_name') === name;
             return (
                 <a className={ "script-list-item-widget rewrite " + (selected ? "selected" : "")} href={url} onClick={ this._click }>
-                    <h5>{name}</h5>
+                    <h4>{name}</h4>
+                    <p>{m.get('words')}</p>
                 </a>
             );
         },

@@ -17,24 +17,22 @@ define(function(require) {
         componentDidMount: function() {
             this.props.collection.on('add remove change', this._update, this);
             this._ofp_state.on('change', this._update, this);
+            $(window).on('resize', this._resize);
+            this._resize();
         },
 
         componentWillUnmount: function() {
             this.props.collection.off(null, null, this);
+            $(window).off('resize');
         },
 
         render: function() {
-            var items = _.map(this.props.collection.models, function(m) {
-                return <ScriptsListItemWidget model={m} />
+            var items = _.map(this.props.collection.models.sort(), function(m) {
+                return <ScriptsListItemWidget model={m} key={'script-list-' + m.cid}/>
             });
 
             var selected = this._ofp_state.get('script_name');
             var model = this.props.collection.get(selected);
-            /*
-                <button className="btn btn-default pull-right" onClick={this._create}>
-                    <i className="fa fa-file-o" />
-                </button>
-            */
             return (
                 <div className="script-list-widget">
                     { items }
@@ -46,11 +44,9 @@ define(function(require) {
             if (this.isMounted()) { this.forceUpdate(); }
         },
 
-        _create: function(e) {
-            e.preventDefault();
-            this._ofp_state.set('script_name', undefined);
-            return false;
-        },
+        _resize: function() {
+            $('.script-list-widget').height($(window).height() - 130);
+        }
 
     });
 
