@@ -1,0 +1,24 @@
+{
+  "name": "open-furby-platform",
+  "version": "0.0.1",
+
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+
+  "dependencies": {
+    "mysql": "2.2.0",
+    "moment": "2.6.0",
+    "sprintf": "0.1.3",
+    "underscore": "1.6.0",
+    "jquery": "2.1.0",
+    "less": "*",
+    "grunt-cli": "*",
+    "github": "0.1.16",
+    "express": "3.3.8"
+  }
+
+}
