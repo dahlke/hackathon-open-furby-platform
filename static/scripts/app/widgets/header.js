@@ -9,7 +9,7 @@ define(function(require) {
                     <div className="navbar-header">
                         <span className="navbar-brand" href="#">
                             <img className="logo" src="static/images/logo.png" />
-                            <span>Open Furby Platform</span>
+                            <span>Open AwwCog Platform</span>
                         </span>
                     </div>
                 </nav>
